@@ -1,0 +1,36 @@
+{
+  "htmlElements": {
+    "tags": [
+      "body",
+      "button",
+      "div",
+      "footer",
+      "h1",
+      "h2",
+      "head",
+      "html",
+      "link",
+      "meta",
+      "p",
+      "script",
+      "section",
+      "span",
+      "title"
+    ],
+    "classes": [
+      "bg-black",
+      "border-2",
+      "my-10",
+      "p-1",
+      "p-10",
+      "p-5",
+      "text-4xl",
+      "text-blue-500",
+      "text-center",
+      "text-white"
+    ],
+    "ids": [
+      "content"
+    ]
+  }
+}

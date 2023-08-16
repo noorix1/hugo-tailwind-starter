@@ -1,0 +1,5 @@
+<footer>
+    {{ $alpine := resources.Get "alpinejs/cdn.min.js" }}
+<script src="{{ $alpine.RelPermalink }}" defer></script>
+
+</footer>

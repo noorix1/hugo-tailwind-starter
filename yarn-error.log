@@ -1,0 +1,55 @@
+Arguments: 
+  /Users/noorix/.nvm/versions/node/v18.14.0/bin/node /opt/homebrew/bin/yarn global dir --json
+
+PATH: 
+  /Users/noorix/Library/Android/sdk/tools:/Users/noorix/Library/Android/sdk/tools/bin:/Users/noorix/Library/Android/sdk/platform-tools:/opt/homebrew/opt/mysql-client/bin:/opt/homebrew/bin:/Users/noorix/.nvm/versions/node/v18.14.0/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/noorix/development/flutter/bin:/usr/local/bin:/Users/noorix/.yarn/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.14.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/noorix/development/hugo-tailwind/package.json: Unexpected token } in JSON at position 314
+      at JSON.parse (<anonymous>)
+      at /opt/homebrew/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /opt/homebrew/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "hugo-tailwind-starter",
+    "version": "1.0.0",
+    "description": "Hugo Tailwind and AlpineJS starter template",
+    "main": "index.html",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "hugo server --disableFastRender --ignoreCache --noHTTPCache --buildDrafts",
+  
+    },
+    "keywords": [
+      "hugo",
+      "tailwindcss",
+      "alpinejs",
+      "noorix"
+    ],
+    "author": "Murtaza Nooruddin",
+    "license": "ISC",
+    "dependencies": {
+      "alpinejs": "^3.12.3",
+      "autoprefixer": "^10.4.15",
+      "postcss": "^8.4.27",
+      "tailwindcss": "^3.3.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

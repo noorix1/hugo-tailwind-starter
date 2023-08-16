@@ -1,0 +1,25 @@
+{
+  "name": "hugo-tailwind-starter",
+  "version": "1.0.0",
+  "description": "Hugo Tailwind and AlpineJS starter template",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "hugo server --disableFastRender --port 1314 --ignoreCache --noHTTPCache --buildDrafts"
+  },
+  "keywords": [
+    "hugo",
+    "tailwindcss",
+    "alpinejs",
+    "noorix"
+  ],
+  "author": "Murtaza Nooruddin",
+  "license": "ISC",
+  "dependencies": {
+    "alpinejs": "^3.12.3",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.27",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.3.3"
+  }
+}

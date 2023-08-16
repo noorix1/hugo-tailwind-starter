@@ -1,0 +1,17 @@
+<head>
+      <title>{{ .Site.Title }}</title>
+      <meta charset="UTF-8">
+      <meta name="google" content="notranslate">
+      <meta http-equiv="Content-Language" content="en">
+      <meta name="description" content="Site description, this can be imported from hugo site params" >
+      <meta meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+      {{/* styles */}}
+      {{ $options := dict "inlineImports" true }}
+      {{ $styles := resources.Get "css/styles.css" }}
+      {{ $styles = $styles  | resources.PostCSS $options }}
+      {{ if hugo.IsProduction }}
+        {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
+      {{ end }}
+      <link href="{{ $styles.RelPermalink }}" rel="stylesheet" >
+  </head>
