@@ -1,0 +1,35 @@
+<div x-data="{ open: false }">
+    <!-- Hamburger Menu (Visible only on mobile) -->
+    <button @click="open = !open" class="lg:hidden p-4 border border-gray-300 rounded">
+        ☰
+    </button>
+
+    <!-- Main Menu -->
+    <ul :class="{ 'hidden': !open }" class="lg:flex bg-white border border-gray-300 lg:border-none">
+        {{ range .Site.Menus.main.ByWeight }}
+            {{ if and .HasChildren (not .Parent) }}
+                <!-- Dropdown for items with children -->
+                <li x-data="{ openDropdown: false }" @mouseover="openDropdown = true" @mouseout="openDropdown = false" class="relative group">
+                    <button @click="openDropdown = !openDropdown" class="flex justify-between items-center w-full p-4 hover:text-blue-500 lg:hidden">
+                        {{ .Name }} <span x-text="openDropdown ? '-' : '+'"></span>
+                    </button>
+                    <a href="{{ .URL }}" class="hidden lg:block p-2 px-4 hover:text-blue-500">
+                        {{ .Name }}
+                    </a>
+                    <div x-show="openDropdown" class="absolute w-full h-px bg-transparent"></div>
+                    <ul x-show="openDropdown" 
+                        class="lg:absolute lg:top-full lg:left-0 mt-2 space-y-2 bg-white lg:border lg:border-gray-300 shadow-lg z-10">
+                        {{ range .Children }}
+                            <li class="px-4 py-2 hover:bg-blue-100"><a href="{{ .URL }}" class="hover:text-blue-500">{{ .Name }}</a></li>
+                        {{ end }}
+                    </ul>
+                </li>
+            {{ else if not .Parent }}
+                <!-- Regular menu item without children -->
+                <li>
+                    <a href="{{ .URL }}" class="block p-4 hover:text-blue-500 lg:p-2 lg:px-4">{{ .Name }}</a>
+                </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+</div>

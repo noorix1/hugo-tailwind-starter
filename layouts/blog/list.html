@@ -1,0 +1,61 @@
+{{ define "main" }}
+<div class="container mx-auto my-10 ">
+
+    <div class="flex flex-wrap">
+        <div class="flex-none">
+            Categories: {{range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+            <a class="inline-block bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2"
+                href="{{.Permalink}}">{{.Title}}</a>
+            {{end}}
+        </div>
+        <div class="flex-none">
+            Tags: {{range ($.Site.GetPage "taxonomyTerm" "tags").Pages }}
+            <a class="inline-block bg-green-500 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2"
+                href="{{.Permalink}}">{{.Title}}</a>
+            {{end}}
+        </div>
+    </div>
+
+    {{ if ne .Kind "taxonomy" }}
+    <div class="grid grid-cols-3 mt-2 gap-4">
+
+        {{ range .Pages }}
+
+
+        <div class="flex flex-col">
+            <div>
+                <img class="w-full h-auto rounded" src="{{ .Params.featuredImage }}" alt="featured image {{.Title }}">
+            </div>
+            <div class="w-full bg-gray-100 p-3">
+
+                <a class="text-black no-underline" href="{{ .RelPermalink }}">
+                    <h2 class="text-lg font-bold">{{ .Title }}</h2>
+                </a>
+
+                <time datetime="{{ .Lastmod.Format `006-01-02T15:04:05Z07:00` | safeHTML }}">
+                    {{ .Lastmod.Format "Sep 2,2023" }}</time>
+                <br>
+                Categories: {{ range .Params.categories }}
+                <a class="text-black no-underline px-1" href="/categories/{{ . | urlize}}">{{ . }}</a>
+
+                {{end}}
+                Tags:{{ range .Params.tags }}
+                <a class="text-black no-underline px-1" href="/tags/{{ . | urlize}}">{{ . }}</a>
+
+                {{end}}
+
+                {{ .Content | truncate 400 }}
+                <a class="text-black no-underline hover:text-gray-600" href="{{.Permalink}}">...Read Article</a>
+
+            </div>
+        </div>
+
+        {{ end }}
+    </div>
+
+
+    {{ end }}
+
+</div>
+
+{{ end }}

@@ -2,6 +2,62 @@ baseURL = 'https://noorix.com.au/'
 languageCode = 'en-AU'
 title = 'Noorix Awesome Tailwind Hugo Site'
 
+[menu]
+
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    name = "About"
+    url = "/aboutus/"
+    weight = 20
+
+  [[menu.main]]
+    name = 'Services'
+    url = '/services'
+    weight = 30
+
+  [[menu.main]]
+    name = 'Catering'
+    url = '/services/catering'
+    parent = 'Services'
+    weight = 31
+  
+  [[menu.main]]
+    name = 'Conferences'
+    url = '/services/conferences'
+    parent = 'Services'
+    weight = 32
+
+  [[menu.main]]
+    name = 'Hospitality'
+    url = '/services/hospitality'
+    parent = 'Services'
+    weight = 33
+
+  [[menu.main]]
+    name = 'Travel'
+    url = '/services/travel'
+    weight = 34
+    parent = 'Services'
+
+  [[menu.main]]
+    name = "Contact Us"
+    url = "/contactus/"
+    weight = 40
+
+  [[menu.main]]
+    name = "Blogs"
+    url = "/blog/"
+    weight = 50
+
+  
+[params]
+  author = "Blog Author"
+  description = "This is an awesome Hugo Bootstrap site"
+
 [frontmatter]
   date = ["date", "publishDate", "lastmod"]
   lastmod = ["lastmod", ":fileModTime", ":default"]
@@ -41,3 +97,4 @@ title = 'Noorix Awesome Tailwind Hugo Site'
   [[build.cachebusters]]
     source = "assets/.*\\.(.*)$"
     target = "$1"
+
